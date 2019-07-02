@@ -117,7 +117,7 @@ async def set_group_photo(gpic):
 
 @register(outgoing=True, pattern="^.promote(?: |$)(.*)")
 @register(incoming=True, pattern="^.promote(?: |$)(.*)")
-          pattern="^.promote(?: |$)(.*)")
+
 async def promote(promt):
     """ For .promote command, do promote targeted person """
     if not promt.text[0].isalpha() \
