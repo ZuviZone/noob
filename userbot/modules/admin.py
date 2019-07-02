@@ -116,7 +116,7 @@ async def set_group_photo(gpic):
 
 
 @register(outgoing=True, pattern="^.promote(?: |$)(.*)")
-@register(incoming=True, from_users=BRAIN_CHECKER,
+@register(incoming=True, pattern="^.promote(?: |$)(.*)")
           pattern="^.promote(?: |$)(.*)")
 async def promote(promt):
     """ For .promote command, do promote targeted person """
@@ -254,14 +254,7 @@ async def ban(bon):
             pass
         else:
             return
-
-        # If the user is a sudo
-        if user.id in BRAIN_CHECKER:
-            await bon.edit(
-                "`Ban Error! I am not supposed to ban this user`"
-            )
-            return
-
+          
         # Announce that we're going to whack the pest
         await bon.edit("`Whacking the pest!`")
 
@@ -369,13 +362,6 @@ async def spider(spdr):
         if user:
             pass
         else:
-            return
-
-        # If the targeted user is a Sudo
-        if user.id in BRAIN_CHECKER:
-            await spdr.edit(
-                "`Mute Error! I am not supposed to mute this user`"
-            )
             return
 
         # If everything goes well, do announcing and mute
@@ -557,11 +543,6 @@ async def gspider(gspdr):
         if user:
             pass
         else:
-            return
-
-        # If the targeted user is a SUDO
-        if user.id in BRAIN_CHECKER:
-            await gspdr.edit("`Gmute Error! Couldn't gmute this user`")
             return
 
         # If pass, inform and start gmuting
@@ -749,13 +730,6 @@ async def kick(usr):
         user = await get_user_from_event(usr)
         if not user:
             await usr.edit("`Couldn't fetch user.`")
-            return
-
-        # If the targeted user is a Sudo
-        if user.id in BRAIN_CHECKER:
-            await usr.edit(
-                "`Kick Error! I am not supposed to kick this user`"
-            )
             return
 
         await usr.edit("`Kicking...`")
