@@ -225,6 +225,41 @@ GEY_STRINGS = [
      "`you gey gey gey gey gey gey gey gey`",
      "`you gey go away`",
 ]
+PRO_STRINGS = [
+     "`This gey is pro as phack.`",
+     "`Pros here -_- Time to Leave`",
+]
+INSULT_STRINGS = [ 
+    "`Owww ... Such a stupid idiot.`",
+    "`Don't drink and type.`",
+    "`Command not found. Just like your brain.`",
+    "`Bot rule 544 section 9 prevents me from replying to stupid humans like you.`",
+    "`Sorry, we do not sell brains.`",
+    "`Believe me you are not normal.`",
+    "`I bet your brain feels as good as new, seeing that you never use it.`",
+    "`If I wanted to kill myself I'd climb your ego and jump to your IQ.`",
+    "`You didn't evolve from apes, they evolved from you.`",
+    "`What language are you speaking? Cause it sounds like bullshit.`",
+    "`You are proof that evolution CAN go in reverse.`",
+    "`I would ask you how old you are but I know you can't count that high.`",
+    "`As an outsider, what do you think of the human race?`",
+    "`Ordinarily people live and learn. You just live.`",
+    "`Keep talking, someday you'll say something intelligent!.......(I doubt it though)`",
+    "`Everyone has the right to be stupid but you are abusing the privilege.`",
+    "`I'm sorry I hurt your feelings when I called you stupid. I thought you already knew that.`",
+    "`You should try tasting cyanide.`",
+    "`You should try sleeping forever.`",
+    "`Pick up a gun and shoot yourself.`",
+    "`Try bathing with Hydrochloric Acid instead of water.`",
+    "`Go Green! Stop inhaling Oxygen.`",
+    "`God was searching for you. You should leave to meet him.`",
+    "`You should Volunteer for target in an firing range.`",
+    "`Try playing catch and throw with RDX its fun.`",
+    "`People like you are the reason we have middle fingers.`",
+    "`When your mom dropped you off at the school, she got a ticket for littering.`",
+    "`You’re so ugly that when you cry, the tears roll down the back of your head…just to avoid your face.`",
+    "`If you’re talking behind my back then you’re in a perfect position to kiss my a**!.`",
+]
 # ===========================================
 
 
@@ -383,7 +418,16 @@ async def hacking (hacked):
                 "`Pay 1001$ to` @anonycrew `To Remove This Hack...`\n"
             )
 
-
+			  
+@register(outgoing=True, pattern="^.kill$")
+async def killing (killed):
+    """ Dont Kill Too much -_-"""
+    if not killed.text[0].isalpha() and killed.text[0] not in ("/", "#", "@", "!"):
+        if await killed.get_reply_message():
+            await killed.edit(
+                "`Targeted User was Killed successfully 😈......`\n"
+            )
+			  
 @register(outgoing=True, pattern="^.bskd(?: |$)(.*)")
 async def faces(owo):
     """ UwU """
@@ -515,8 +559,25 @@ async def raping (raped):
         index = random.randint(0, len(RAPE_STRINGS) - 1)
         reply_text = RAPE_STRINGS[index]
         await raped.edit(reply_text)
-                          
-  
+
+			  
+@register(outgoing=True, pattern="^.insult$")
+async def insulting (insulted):
+    """ Dont Insult Too much -_-"""
+    if not insulted.text[0].isalpha() and insulted.text[0] not in ("/", "#", "@", "!"):
+        index = random.randint(0, len(INSULT_STRINGS) - 1)
+        reply_text = INSULT_STRINGS[index]
+        await insulted.edit(reply_text)	
+
+			  
+@register(outgoing=True, pattern="^.pro$")
+async def proo (pros):
+    """ String for Pros only -_-"""
+    if not pros.text[0].isalpha() and pros.text[0] not in ("/", "#", "@", "!"):
+        index = random.randint(0, len(PRO_STRINGS) - 1)
+        reply_text = PRO_STRINGS[index]
+        await pros.edit(reply_text)			  
+   
 			  
 @register(outgoing=True, pattern="^.gey$")
 async def geys (geyed):
