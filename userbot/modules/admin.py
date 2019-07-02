@@ -20,13 +20,8 @@ from telethon.tl.types import (ChannelParticipantsAdmins, ChatAdminRights,
                                ChatBannedRights, MessageEntityMentionName,
                                MessageMediaPhoto)
 
-from userbot import (,
-                     CMD_HELP, BOTLOG, BOTLOG_CHATID, bot,
-                     is_mongo_alive, is_redis_alive)
-
-from userbot.events import register
-from userbot.modules.dbhelper import (mute, unmute, get_muted,
-                                      gmute, ungmute, get_gmuted)
+from userbot import CMD_HELP, BOTLOG, BOTLOG_CHATID, bot,
+from userbot.events import register                   
 
 # =================== CONSTANT ===================
 PP_TOO_SMOL = "`The image is too small`"
