@@ -258,7 +258,16 @@ INSULT_STRINGS = [
     "`People like you are the reason we have middle fingers.`",
     "`When your mom dropped you off at the school, she got a ticket for littering.`",
     "`You’re so ugly that when you cry, the tears roll down the back of your head…just to avoid your face.`",
-    "`If you’re talking behind my back then you’re in a perfect position to kiss my a**!.`",
+    "`If you’re talking behind my back then you’re in a perfect position to kiss my a**!.`",	
+]
+CHU_STRINGS = [
+     "`Taare hai Asmaan me very very bright jaat na jla bskd dekh le apni hight.`",
+     "`jindagi ki na toote lari iski lulli hoti nhi khadi`",
+     "`Kbhi kbhi meri dil me khyaal ata hai ayse chutiyo ko kon paida kr jata hai😂.`",
+     "`Saawan ka mahina pawan kare shor jake gand mara bskd kahi aur.`", 
+     "`Dil ke armaa ansuon me beh jaye tum bskd ke chutiye hi reh gye.`",
+     "`Ishq Se Tabiyat Ne Zeest Ka Mazaa aya maine is lodu ko randi khane me paya.`",
+     "`Mirza galib ki yeh khani hai tu bhosdika hai yeh sab ki jubani hai.`",
 ]
 # ===========================================
 
@@ -425,7 +434,7 @@ async def killing (killed):
     if not killed.text[0].isalpha() and killed.text[0] not in ("/", "#", "@", "!"):
         if await killed.get_reply_message():
             await killed.edit(
-                "`Targeted User was Killed successfully 😈......`\n"
+                "`Targeted User was Killed successfully Chal nikal ab Bhosdike😈......`\n"
             )
 			  
 @register(outgoing=True, pattern="^.bskd(?: |$)(.*)")
@@ -560,6 +569,15 @@ async def raping (raped):
         reply_text = RAPE_STRINGS[index]
         await raped.edit(reply_text)
 
+
+@register(outgoing=True, pattern="^.chu$")
+async def chutiya (chus):
+    """ String for Chu only -_-"""
+    if not chus.text[0].isalpha() and chus.text[0] not in ("/", "#", "@", "!"):
+        index = random.randint(0, len(CHU_STRINGS) - 1)
+        reply_text = CHU_STRINGS[index]
+        await chus.edit(reply_text)			  
+			  
 			  
 @register(outgoing=True, pattern="^.insult$")
 async def insulting (insulted):
