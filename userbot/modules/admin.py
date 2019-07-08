@@ -118,12 +118,12 @@ async def promote(promt):
             return
 
         new_rights = ChatAdminRights(
-            add_admins=True,
+            add_admins=None,
             invite_users=True,
-            change_info=True,
-            ban_users=True,
-            delete_messages=True,
-            pin_messages=True
+            change_info=None,
+            ban_users=None,
+            delete_messages=None,
+            pin_messages=None
         )
 
         await promt.edit("`Promoting...`")
