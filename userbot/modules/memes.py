@@ -269,6 +269,18 @@ CHU_STRINGS = [
      "`Ishq Se Tabiyat Ne Zeest Ka Mazaa aya maine is lodu ko randi khane me paya.`",
      "`Mirza galib ki yeh khani hai tu bhosdika hai yeh sab ki jubani hai.`",
 ]
+THANOS_STRINGS = [
+     "`Mashoor Rand, Ne Arz Kiya Hai. Aane Wale Aate Hai, Jaane Wale Jaate Hai. Yaade Bas Unki Reh Jaati Hai, Jo G**Nd Sujaa Ke Jaate Hai`",
+     "`Pani kam hai matkey me ga*d mardunga teri ek jatke me`",
+     "`Aand kitne bhi bade ho, lund ke niche hi rehte hai`",
+     "`Tum Ameer hum gareeb hum jhopdiwale Tum bhosiwale`",
+     "`Sisi Bhari Gulab ki padi palang ke pass chodne wale chod gye ab q baitha udaas`",
+     "`Phuloo Ka Raja Gulaab Kaato me Rehta hai Jeewan ka Nirmata jaato me rehta hai😂`",
+     "`Chude hue maal ko yaad mt krna Jo Chut na de usse kabhi friyad mt karna jise chudna hai wo chud ke rhegi bekar me muth maar ke apni jindagi barbaad mt krna`",
+     "`Gand mare gandu Chut mare Chutiya Sabse accha mutti 2 mint me chutti😛`",
+     "`Marzi Ka Sex Pap Nahi Hota.. Piche Se Dalne Wala Kabhi Baap Nahi Hota.. Condom Zarur Lagana Mere Dost Qki.. Sex K Waqt Popat Ke Pass Dimag Nahi Hota.`",
+     "`Uss Ne Hothon Se Chhu Kar Lowd* Pe Nasha Kar Diya; Lu*D Ki Baat To Aur Thi, Uss Ne To Jhato* Ko Bhi Khada Kar Diya!`",
+]
 # ===========================================
 
 
@@ -576,8 +588,16 @@ async def chutiya (chus):
     if not chus.text[0].isalpha() and chus.text[0] not in ("/", "#", "@", "!"):
         index = random.randint(0, len(CHU_STRINGS) - 1)
         reply_text = CHU_STRINGS[index]
-        await chus.edit(reply_text)			  
+        await chus.edit(reply_text)
 			  
+			  
+@register(outgoing=True, pattern="^.thanos$")
+async def thanos (thanos):
+    """ String for thanos only -_-"""
+    if not chus.text[0].isalpha() and thanos.text[0] not in ("/", "#", "@", "!"):
+        index = random.randint(0, len(THANOS_STRINGS) - 1)
+        reply_text = THANOS_STRINGS[index]
+        await thanos.edit(reply_text)		  
 			  
 @register(outgoing=True, pattern="^.insult$")
 async def insulting (insulted):
