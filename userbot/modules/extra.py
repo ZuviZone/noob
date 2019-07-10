@@ -36,11 +36,11 @@ async def Oof(e):
         t = t[:-1] + "of"
         await e.edit(t)
 
-@register(outgoing=True, pattern="^Land$")
-async def Land(e):
-    t = "Land"
+@register(outgoing=True, pattern="^Ood$")
+async def Ood(e):
+    t = "Ood"
     for j in range(15):
-        t = t[:-1] + "la"
+        t = t[:-1] + "od"
         await e.edit(t)
 	
 @register(outgoing=True, pattern="^.cry$")
@@ -203,5 +203,5 @@ CMD_HELP.update({
 CMD_HELP.update({
     "oof": "Same as ;__; but ooof"
 CMD_HELP.update({
-    "land": "Same as ;__; but landd"
+    "ood": "Same as ;__; oood "
 })
