@@ -600,7 +600,7 @@ async def chutiya (chus):
 @register(outgoing=True, pattern="^.thanos$")
 async def thanos (thanos):
     """ String for thanos only -_-"""
-    if not chus.text[0].isalpha() and thanos.text[0] not in ("/", "#", "@", "!"):
+    if not thanos.text[0].isalpha() and thanos.text[0] not in ("/", "#", "@", "!"):
         index = random.randint(0, len(THANOS_STRINGS) - 1)
         reply_text = THANOS_STRINGS[index]
         await thanos.edit(reply_text)		  
