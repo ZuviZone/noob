@@ -487,7 +487,13 @@ async def shrugger(shg):
     r""" ¯\_(ツ)_/¯ """
     if not shg.text[0].isalpha() and shg.text[0] not in ("/", "#", "@", "!"):
         await shg.edit(r"¯\_(ツ)_/¯")
+			  
 
+@register(outgoing=True, pattern="^.gunn$")
+async def shrugger(shg):
+    r""" ⌐╦╦═─ > > """
+    if not shg.text[0].isalpha() and shg.text[0] not in ("/", "#", "@", "!"):
+        await shg.edit(r"⌐╦╦═─ > >")
 
 @register(outgoing=True, pattern="^.runs$")
 async def runner_lol(run):
