@@ -202,6 +202,7 @@ CMD_HELP.update({
 })
 CMD_HELP.update({
     "oof": "Same as ;__; but ooof"
+})
 CMD_HELP.update({
     "ood": "Same as ;__; but oood"
 })
