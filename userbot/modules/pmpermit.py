@@ -16,10 +16,10 @@ from userbot import (COUNT_PM, CMD_HELP, BOTLOG, BOTLOG_CHATID,
 from userbot.events import register
 
 # ========================= CONSTANTS ============================
-UNAPPROVED_MSG = ("`Welcome, You are not special. You're not a beautiful and unique snowflake.`\n\n"
-                  "`You're the same decaying organic matter as everything else.`"
+UNAPPROVED_MSG = ("`Welcome, You are a wonderful person with a wonderful view of life.`\n\n"
+                  "`Your companionship is always an opportunity But Sed This line is not for you.`"
                   "` So just tell why you are here ?`\n\n"
-                  "`Your message has been received will be responded when I'm free don't sit here whole day wondering, I am not jobless like 🙂`")
+                  "`Your message has been received will be responded when I'm free don't sit here whole day coz there is lots of pending message so🙂`")
 # =================================================================
 
 
