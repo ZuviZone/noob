@@ -36,11 +36,11 @@ async def Oof(e):
         t = t[:-1] + "of"
         await e.edit(t)
 
-@register(outgoing=True, pattern="^Ood$")
-async def Ood(e):
-    t = "Ood"
+@register(outgoing=True, pattern="^Ook$")
+async def Ook(e):
+    t = "Ook"
     for j in range(15):
-        t = t[:-1] + "od"
+        t = t[:-1] + "ok"
         await e.edit(t)
 	
 @register(outgoing=True, pattern="^.cry$")
@@ -94,7 +94,7 @@ async def disapprovepm(disapprvpm):
             name0 = str(aname.first_name)
 
         await disapprvpm.edit(
-            f"[{name0}](tg://user?id={disapprvpm.chat_id}) `Disaproved to PM!`"
+            f"[{name0}](tg://user?id={disapprvpm.chat_id}) `Disaproved to PM! nikal lavde `"
             )
 
         if BOTLOG:
@@ -204,5 +204,5 @@ CMD_HELP.update({
     "oof": "Same as ;__; but ooof"
 })
 CMD_HELP.update({
-    "ood": "Same as ;__; but oood"
+    "ook": "Same as ;__; but oook"
 })
