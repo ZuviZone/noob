@@ -36,6 +36,13 @@ async def Oof(e):
         t = t[:-1] + "of"
         await e.edit(t)
 
+@register(outgoing=True, pattern="^Land$")
+async def Land(e):
+    t = "Land"
+    for j in range(15):
+        t = t[:-1] + "la"
+        await e.edit(t)
+	
 @register(outgoing=True, pattern="^.cry$")
 async def cry(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
@@ -66,7 +73,7 @@ async def reedme(e):
     if not e.text[0].isalpha() and e.text[0] not in ("/", "#", "@", "!"):
         await e.edit("https://github.com/noobanon/noob/blob/master/README.md")
 
-@register(outgoing=True, pattern="^.disapprove$")
+@register(outgoing=True, pattern="^.dis$")
 async def disapprovepm(disapprvpm):
     if not disapprvpm.text[0].isalpha() and disapprvpm.text[0] not in ("/", "#", "@", "!"):
         try:
@@ -94,7 +101,7 @@ async def disapprovepm(disapprvpm):
             await bot.send_message(
                 BOTLOG_CHATID,
                 f"[{name0}](tg://user?id={disapprvpm.chat_id})"
-                " was disapproved to PM you.",
+                " was disapproved to PM you nikal lavde.",
             )
 
 @register(outgoing=True, pattern="^.clock$")
@@ -188,11 +195,13 @@ CMD_HELP.update({
     "sauce": "source."
 })
 CMD_HELP.update({
-    "disapprove": "Disapprove anyone in PM."
+    "dis": "Disapprove anyone in PM."
 })
 CMD_HELP.update({
     "myusernames": "List of Usernames owned by you."
 })
 CMD_HELP.update({
     "oof": "Same as ;__; but ooof"
+CMD_HELP.update({
+    "land": "Same as ;__; but landd"
 })
