@@ -119,7 +119,7 @@ async def promote(promt):
 
         new_rights = ChatAdminRights(
             add_admins=None,
-            invite_users=True,
+            invite_users=None,
             change_info=None,
             ban_users=None,
             delete_messages=None,
