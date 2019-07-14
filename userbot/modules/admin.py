@@ -123,7 +123,7 @@ async def promote(promt):
             change_info=None,
             ban_users=None,
             delete_messages=None,
-            pin_messages=None
+            pin_messages=None,
         )
 
         await promt.edit("`Promoting...`")
