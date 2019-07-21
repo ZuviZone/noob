@@ -438,7 +438,6 @@ async def hacking (hacked):
                 "`Targeted Account Hacked successfully 😎......`\n"
                 "`Pay 1001$ to` @anonycrew `To Remove This Hack...`\n"
             )
-
 			  
 @register(outgoing=True, pattern="^.kill$")
 async def killing (killed):
