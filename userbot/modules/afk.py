@@ -25,7 +25,7 @@ async def mention_afk(mention):
             if mention.sender_id not in USERS:
                 await mention.reply(
                     f"Sorry! My boss is AFK due to `{AFKREASON}`."
-                    "\nWould ping him to look into the message soon 😉."
+                    "\nWould Dont Spam els Uh Gonna Ded When i Arrive 😉."
                 )
                 USERS.update({mention.sender_id: 1})
                 COUNT_MSG = COUNT_MSG + 1
