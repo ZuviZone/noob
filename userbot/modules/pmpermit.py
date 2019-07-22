@@ -61,8 +61,8 @@ async def permitpm(event):
 
                 if COUNT_PM[event.chat_id] > 4:
                     await event.respond(
-                        "`You were spamming my master's PM, which I don't like.`"
-                        " `I'mma Report Spam.`"
+                        "`You were spamming my master's PM, which I don't like Nimba.`"
+                        " `I'mma Report Spam.Go away kek`"
                     )
 
                     try:
@@ -143,11 +143,11 @@ async def approvepm(apprvpm):
         try:
             approve(uid)
         except IntegrityError:
-            await apprvpm.edit("`User may already be approved.`")
+            await apprvpm.edit("`This Nimba iz Already Approved sur.`")
             return
 
         await apprvpm.edit(
-            f"[{name0}](tg://user?id={uid}) `approved to PM!`"
+            f"[{name0}](tg://user?id={uid}) `Nub Nimbaa approved to PM KEK!`"
         )
 
         if BOTLOG:
@@ -163,7 +163,7 @@ async def blockpm(block):
     """ For .block command, block people from PMing you! """
     if not block.text[0].isalpha() and block.text[0] not in ("/", "#", "@", "!"):
 
-        await block.edit("`You are gonna be blocked from PM-ing my Master!`")
+        await block.edit("`This Chu iz Blocked To PM You Sur!`")
 
         if block.reply_to_msg_id:
             reply = await block.get_reply_message()
@@ -198,7 +198,7 @@ async def unblockpm(unblock):
     if not unblock.text[0].isalpha() and unblock.text[0] \
             not in ("/", "#", "@", "!") and unblock.reply_to_msg_id:
 
-        await unblock.edit("`My Master has forgiven you to PM now`")
+        await unblock.edit("`My Master has forgiven you to PM Nimbaa now`")
 
         if unblock.reply_to_msg_id:
             reply = await unblock.get_reply_message()
