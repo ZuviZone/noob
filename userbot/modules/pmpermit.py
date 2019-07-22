@@ -62,7 +62,7 @@ async def permitpm(event):
                 if COUNT_PM[event.chat_id] > 4:
                     await event.respond(
                         "`You were spamming my master's PM, which I don't like Nimba.`"
-                        " `I'mma Report Spam.Go away kek`"
+                        " `I'mma Report Spam.Go away KEK`"
                     )
 
                     try:
