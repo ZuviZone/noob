@@ -237,8 +237,9 @@ GEY_STRINGS = [
      "`you gey go away`",
 ]
 PRO_STRINGS = [
-     "`This gey is pro as phack.`",
+     "`This gey is pro as phack yha ky lene aya?`",
      "`Ultra Pros here -_- Time to Leave`",
+     "`All pruu here ;__; Time to Leavee Lavdia`",
 ]
 INSULT_STRINGS = [ 
     "`Owww ... Such a stupid idiot.`",
@@ -279,6 +280,18 @@ CHU_STRINGS = [
      "`Dil ke armaa ansuon me beh jaye tum bskd ke chutiye hi reh gye.`",
      "`Ishq Se Tabiyat Ne Zeest Ka Mazaa aya maine is lodu ko randi khane me paya.`",
      "`Mirza galib ki yeh khani hai tu bhosdika hai yeh sab ki jubani hai.`",
+]
+FUK_STRINGS = [
+   "`It's better to let someone think you are an Idiot than to open your mouth and prove it.`",
+   "`Talking to a liberal is like trying to explain social media to a 70 years old`",
+   "`CHAND PE HAI APUN LAVDE.`",
+   "`Pehle main tereko chakna dega, fir daru pilayega, fir jab aap dimag se nahi L*nd se sochoge, tab bolega..`",
+   "`Pardhan mantri se number liya, parliament apne :__;baap ka hai...`",
+   "`Cachaa Ooo bhosdi wale Chacha`",
+   "`Aaisi Londiya Chodiye, L*nd Ka Aapa Khoye, Auro Se Chudi Na Ho, Biwi Wo Hi Hoye`",
+   "`Nachoo Bhosdike Nachoo`",
+   "`Jinda toh jaat ke baal bhi hai`",
+   "`Sab ko pta tu randi ka baccha hai (its just a joke)`", 
 ]
 THANOS_STRINGS = [
      "`Mashoor Rand, Ne Arz Kiya Hai. Aane Wale Aate Hai, Jaane Wale Jaate Hai. Yaade Bas Unki Reh Jaati Hai, Jo G**Nd Sujaa Ke Jaate Hai`",
@@ -604,7 +617,14 @@ async def raping (raped):
         index = random.randint(0, len(RAPE_STRINGS) - 1)
         reply_text = RAPE_STRINGS[index]
         await raped.edit(reply_text)
-
+			  
+@register(outgoing=True, pattern="^.fuk$")
+async def chutiya (fuks):
+    """ String for fhu only -_-"""
+    if not fuks.text[0].isalpha() and fuks.text[0] not in ("/", "#", "@", "!"):
+        index = random.randint(0, len(CHU_STRINGS) - 1)
+        reply_text = FUK_STRINGS[index]
+        await fuks.edit(reply_text)
 
 @register(outgoing=True, pattern="^.chu$")
 async def chutiya (chus):
@@ -621,8 +641,8 @@ async def thanos (thanos):
     if not thanos.text[0].isalpha() and thanos.text[0] not in ("/", "#", "@", "!"):
         index = random.randint(0, len(THANOS_STRINGS) - 1)
         reply_text = THANOS_STRINGS[index]
-        await thanos.edit(reply_text)		  
-			  
+        await thanos.edit(reply_text)	
+			  			  
 @register(outgoing=True, pattern="^.insult$")
 async def insulting (insulted):
     """ Dont Insult Too much -_-"""
