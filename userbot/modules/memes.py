@@ -33,6 +33,7 @@ METOOSTR = [
 
 NOOBSTR = [
     "`YOU PRO NIMBA DONT MESS WIDH MEH`",
+    "`Haha yes`",
     "`NOOB NIMBA TRYING TO BE FAMOUS KEK`",
     "`Sometimes one middle finger isn’t enough to let someone know how you feel. That’s why you have two hands`",
     "`Some Nimbas need to open their small minds instead of their big mouths`",
@@ -530,7 +531,7 @@ async def enable_runs(run):
         global DISABLE_RUN
         DISABLE_RUN = False
         await run.edit("```Done!```")
-
+			  
 
 @register(outgoing=True, pattern="^.metoo$")
 async def metoo(hahayes):
@@ -558,7 +559,15 @@ async def spongemocktext(mock):
         reply_text = spongemock.mock(message)
         await mock.edit(reply_text)
 
-
+@register(outgoing=True, pattern="^.noob$")
+async def metoo(hahayes):
+    """ haha yes """
+    if not hahayes.text[0].isalpha() and hahayes.text[0] not in ("/", "#", "@", "!"):
+        index = random.randint(0, len(NOOBSTR) - 1)
+        reply_text = NOOBSTR[index]
+        await hahayes.edit(reply_text)
+			  
+			  
 @register(outgoing=True, pattern="^.clap(?: |$)(.*)")
 async def claptext(memereview):
     """ Praise people! """
