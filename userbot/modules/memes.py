@@ -25,10 +25,20 @@ METOOSTR = [
     "`Me too thanks`",
     "`Haha yes, me too`",
     "`Same lol`",
-    "`Me irl`",
+    "`Some Nimbas need to open their small minds instead of their big mouths`",
     "`Same here`",
     "`Haha yes`",
     "`Same pinch bsdk`",
+]
+
+NOOBSTR = [
+    "`YOU PRO NIMBA DONT MESS WIDH MEH`",
+    "`NOOB NIMBA TRYING TO BE FAMOUS KEK`",
+    "`Sometimes one middle finger isn’t enough to let someone know how you feel. That’s why you have two hands`",
+    "`Some Nimbas need to open their small minds instead of their big mouths`",
+    "`UH DONT KNOW MEH SO STAY AWAY LAVDE`",
+    "`Kysa kysaaaa haaan? Phir MAAR nhi Khayega tu?`",
+    "`Jikar Jinka hota hai galiyo meh woh bhosdika ajj paya gya naliyo me`",
 ]
 EMOJIS = [
     "😂",
@@ -227,7 +237,7 @@ GEY_STRINGS = [
 ]
 PRO_STRINGS = [
      "`This gey is pro as phack.`",
-     "`Pros here -_- Time to Leave`",
+     "`Ultra Pros here -_- Time to Leave`",
 ]
 INSULT_STRINGS = [ 
     "`Owww ... Such a stupid idiot.`",
@@ -490,9 +500,9 @@ async def shrugger(shg):
 
 @register(outgoing=True, pattern="^.gunn$")
 async def shrugger(shg):
-    r""" ⌐╦╦═─ > > """
+    r"""＼(^０^＼) (／^-^)／ """
     if not shg.text[0].isalpha() and shg.text[0] not in ("/", "#", "@", "!"):
-        await shg.edit(r"⌐╦╦═─ > >")
+        await shg.edit(r" ＼(^０^＼) (／^-^)／ > >")
 
 @register(outgoing=True, pattern="^.runs$")
 async def runner_lol(run):
@@ -529,8 +539,8 @@ async def metoo(hahayes):
         index = random.randint(0, len(METOOSTR) - 1)
         reply_text = METOOSTR[index]
         await hahayes.edit(reply_text)
-
-
+			  
+        		  			 
 @register(outgoing=True, pattern="^.mock(?: |$)(.*)")
 async def spongemocktext(mock):
     """ Do it and find the real fun. """
