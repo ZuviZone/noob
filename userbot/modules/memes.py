@@ -25,10 +25,21 @@ METOOSTR = [
     "`Me too thanks`",
     "`Haha yes, me too`",
     "`Same lol`",
-    "`Me irl`",
+    "`Some Nimbas need to open their small minds instead of their big mouths`",
     "`Same here`",
     "`Haha yes`",
     "`Same pinch bsdk`",
+]
+
+NOOBSTR = [
+    "`YOU PRO NIMBA DONT MESS WIDH MEH`",
+    "`Haha yes`",
+    "`NOOB NIMBA TRYING TO BE FAMOUS KEK`",
+    "`Sometimes one middle finger isn’t enough to let someone know how you feel. That’s why you have two hands`",
+    "`Some Nimbas need to open their small minds instead of their big mouths`",
+    "`UH DONT KNOW MEH SO STAY AWAY LAVDE`",
+    "`Kysa kysaaaa haaan? Phir MAAR nhi Khayega tu?`",
+    "`Jikar Jinka hota hai galiyo meh woh bhosdika ajj paya gya naliyo me`",
 ]
 EMOJIS = [
     "😂",
@@ -226,8 +237,9 @@ GEY_STRINGS = [
      "`you gey go away`",
 ]
 PRO_STRINGS = [
-     "`This gey is pro as phack.`",
-     "`Pros here -_- Time to Leave`",
+     "`This gey is pro as phack yha ky lene aya?`",
+     "`Ultra Pros here -_- Time to Leave`",
+     "`All pruu here ;__; Time to Leavee Lavdia`",
 ]
 INSULT_STRINGS = [ 
     "`Owww ... Such a stupid idiot.`",
@@ -268,6 +280,18 @@ CHU_STRINGS = [
      "`Dil ke armaa ansuon me beh jaye tum bskd ke chutiye hi reh gye.`",
      "`Ishq Se Tabiyat Ne Zeest Ka Mazaa aya maine is lodu ko randi khane me paya.`",
      "`Mirza galib ki yeh khani hai tu bhosdika hai yeh sab ki jubani hai.`",
+]
+FUK_STRINGS = [
+   "`It's better to let someone think you are an Idiot than to open your mouth and prove it.`",
+   "`Talking to a liberal is like trying to explain social media to a 70 years old`",
+   "`CHAND PE HAI APUN LAVDE.`",
+   "`Pehle main tereko chakna dega, fir daru pilayega, fir jab aap dimag se nahi L*nd se sochoge, tab bolega..`",
+   "`Pardhan mantri se number liya, parliament apne :__;baap ka hai...`",
+   "`Cachaa Ooo bhosdi wale Chacha`",
+   "`Aaisi Londiya Chodiye, L*nd Ka Aapa Khoye, Auro Se Chudi Na Ho, Biwi Wo Hi Hoye`",
+   "`Nachoo Bhosdike Nachoo`",
+   "`Jinda toh jaat ke baal bhi hai`",
+   "`Sab ko pta tu randi ka baccha hai (its just a joke)`", 
 ]
 THANOS_STRINGS = [
      "`Mashoor Rand, Ne Arz Kiya Hai. Aane Wale Aate Hai, Jaane Wale Jaate Hai. Yaade Bas Unki Reh Jaati Hai, Jo G**Nd Sujaa Ke Jaate Hai`",
@@ -490,9 +514,9 @@ async def shrugger(shg):
 
 @register(outgoing=True, pattern="^.gunn$")
 async def shrugger(shg):
-    r""" ⌐╦╦═─ > > """
+    r"""＼(^０^＼) (／^-^)／ """
     if not shg.text[0].isalpha() and shg.text[0] not in ("/", "#", "@", "!"):
-        await shg.edit(r"⌐╦╦═─ > >")
+        await shg.edit(r" ＼(^０^＼) (／^-^)／ > >")
 
 @register(outgoing=True, pattern="^.runs$")
 async def runner_lol(run):
@@ -520,7 +544,7 @@ async def enable_runs(run):
         global DISABLE_RUN
         DISABLE_RUN = False
         await run.edit("```Done!```")
-
+			  
 
 @register(outgoing=True, pattern="^.metoo$")
 async def metoo(hahayes):
@@ -529,8 +553,8 @@ async def metoo(hahayes):
         index = random.randint(0, len(METOOSTR) - 1)
         reply_text = METOOSTR[index]
         await hahayes.edit(reply_text)
-
-
+			  
+        		  			 
 @register(outgoing=True, pattern="^.mock(?: |$)(.*)")
 async def spongemocktext(mock):
     """ Do it and find the real fun. """
@@ -548,7 +572,15 @@ async def spongemocktext(mock):
         reply_text = spongemock.mock(message)
         await mock.edit(reply_text)
 
-
+@register(outgoing=True, pattern="^.noob$")
+async def metoo(hahayes):
+    """ haha yes """
+    if not hahayes.text[0].isalpha() and hahayes.text[0] not in ("/", "#", "@", "!"):
+        index = random.randint(0, len(NOOBSTR) - 1)
+        reply_text = NOOBSTR[index]
+        await hahayes.edit(reply_text)
+			  
+			  
 @register(outgoing=True, pattern="^.clap(?: |$)(.*)")
 async def claptext(memereview):
     """ Praise people! """
@@ -585,7 +617,14 @@ async def raping (raped):
         index = random.randint(0, len(RAPE_STRINGS) - 1)
         reply_text = RAPE_STRINGS[index]
         await raped.edit(reply_text)
-
+			  
+@register(outgoing=True, pattern="^.fuk$")
+async def chutiya (fuks):
+    """ String for fhu only -_-"""
+    if not fuks.text[0].isalpha() and fuks.text[0] not in ("/", "#", "@", "!"):
+        index = random.randint(0, len(CHU_STRINGS) - 1)
+        reply_text = FUK_STRINGS[index]
+        await fuks.edit(reply_text)
 
 @register(outgoing=True, pattern="^.chu$")
 async def chutiya (chus):
@@ -602,8 +641,8 @@ async def thanos (thanos):
     if not thanos.text[0].isalpha() and thanos.text[0] not in ("/", "#", "@", "!"):
         index = random.randint(0, len(THANOS_STRINGS) - 1)
         reply_text = THANOS_STRINGS[index]
-        await thanos.edit(reply_text)		  
-			  
+        await thanos.edit(reply_text)	
+			  			  
 @register(outgoing=True, pattern="^.insult$")
 async def insulting (insulted):
     """ Dont Insult Too much -_-"""
